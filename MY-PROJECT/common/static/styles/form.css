@@ -1,0 +1,56 @@
+.body{
+    /* background-image: url('../../static/images/m10.jpeg');
+    background-size: cover; */
+    width: 250px;
+    height: 50px;
+    background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));
+}
+.main{
+    width: 800px;
+}
+.form1{
+    width: 600px;
+   
+}
+.sidebar{
+    width: 680px;
+    height: 700px;
+    background-image: url('../../static/images/m11.avif');
+    background-size: cover;
+}
+.body1{
+    width: 250px;
+    height: 50px;
+    /* background-image: linear-gradient(to right, rgb(237, 157, 157) ,rgb(194, 235, 245) ) */
+    background-image: url('../../static/images/m9.jpeg');
+    background-size: cover;
+}
+.formwidth{
+    width: 1200px;
+}
+.body2{
+ background-image: url('../../static/images/m13.jpg');
+ background-size: cover;
+ background-position: center;
+
+ 
+}
+    
+.form2{
+    border-radius: 20px;
+    border-width: 2px; border-color: grey;
+}
+/* .sidebar1{
+    width: 400px;
+    height: 100px;
+    background-image:url('../../static/images/m12.webp') ;
+    background-color: blueviolet;
+} */
+
+.body3{
+    width: 250px;
+    height: 50px;
+    background-image: url('../../static/images/m10.jpeg');
+    background-size: cover;
+   
+}

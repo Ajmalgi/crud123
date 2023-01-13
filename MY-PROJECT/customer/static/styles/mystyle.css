@@ -1,0 +1,24 @@
+.head{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 35px;
+    color: darkgoldenrod;
+   
+    }
+#new{
+    background-color: blueviolet;
+    color:chartreuse;
+    font-size: 50px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-position:top;
+    text-align: center;
+
+}
+body{
+    /* background-image: url("/static/images/flower.webp") ; to make bg images from static folder*/
+    background-image: url("https://media.istockphoto.com/photos/image-of-open-antique-book-on-wooden-table-with-glitter-overlay-picture-id1354441996?b=1&k=20&m=1354441996&s=170667a&w=0&h=O4JDagXhIh1N13PNN6G4_L5KB5QPZryin7FOrZnzYvc=");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    
+
+}

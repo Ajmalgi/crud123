@@ -1,0 +1,93 @@
+
+{% extends "customer/master.html" %}
+{% load static %}
+{% block link %} <link rel="stylesheet" href="{% static 'styles/mycart.css' %}"> {% endblock %}
+{% block content %}
+<h2 class="text-danger ms-5 mt-5">SHOPPING CART</h2>
+<table>
+  <thead>
+    {% for item in items %}
+
+    <tr>
+      <div class="card mb-3 ms-5 mt-5" style="max-width: 840px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="{{ item.product.image.url }}" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">{{ item.product.product_name }}</h5>
+              <p class="card-text"> {{ item.product.price }}</p>
+              <p class="card-text">{{ item.product.product_description }} <br> Household equipment, usually made of
+                wood, metal, plastics, marble, glass, fabrics, or related materials
+                and having a variety of different purposes</p>
+              <input type="number" id="qty{{ forloop.counter }}" data-item="{{item.product.id}}" min="1" value="1" max="{{ item.product.stock }}">Quantity
+              <p>Total Price : <input type="text" value="{{item.product.price}}" class="total_amt" readonly id="amt{{item.product.id}}"></p>
+              <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                <button type="submit" class="btn btn-danger">Save for later</button>
+
+              <a href="{% url 'customer:remove_cart' item.id %}" class="btn btn-success">Remove</a>  
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </tr>{% endfor %}
+    <div class="card text-end" style="width: 18rem;">
+      <div class="card-body">
+        
+        
+        <input  id="grand_total" type="text">Total Amount :
+
+      </div>
+    </div>
+    <div class="mx-auto text-center">
+      <button type="submit" class="btn btn-warning ">Place order</button>
+    </div>
+  </thead>
+</table>
+<script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+
+<script>
+$(document).ready(function(){
+  display_TotalAmount()
+  $.ajaxSetup({
+    headers: {
+      "X-CSRFToken": '{{ csrf_token }}'
+    }
+  })
+  $('input').change(function(){
+    let qty = $(this).val()
+    let pid = $(this).attr('data-item')
+    
+    $.ajax({
+      url : "{% url 'customer:total_price' %}" ,
+      data : {
+        'qty' : qty,
+        'pid' : pid
+      },
+      method : 'POST',
+      success :function(response){
+        $('#amt' +pid).val(response.amount)
+        console.log(response.amount)
+        display_TotalAmount()
+      }
+    })
+  })
+})
+  
+function display_TotalAmount(){
+ 
+  let amount_text = document.getElementsByClassName('total_amt')
+  let total = 0
+  console.log(amount_text)
+  for (let i =0 ; i<amount_text.length; i++) {
+    console.log('loop')
+    total = total + parseInt(amount_text[i].value)
+  }
+  console.log(total)
+  document.getElementById('grand_total').value = total
+}
+</script>
+  {% endblock %}

@@ -1,0 +1,90 @@
+{% extends "common/master.html" %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-FURNITURE</title>
+    <link rel="stylesheet" href="{% static 'styles/form.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/body.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+     integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+     <link href="{% static 'fontawesomefree/css/fontawesome.css' %}" rel="stylesheet" type="text/css">
+</head>
+<body class="body2"> 
+  <div class=" position-absolute top-100 start-50">
+  <div class="sidebar1">
+</div>
+
+  <div class= "position-absolute top-50 start-50 translate-middle">
+    <!-- <div class=" card text-center ms-auto"> -->
+      <div class="header formwidth">
+        
+          <h1 class="modal-title fs-7 mb-3 text-secondary" id="exampleModalToggleLabel">Seller Sign Up</h1>
+         
+        </div>
+    <form method="POST" enctype="multipart/form-data" class="form2">
+        {% csrf_token %}
+        <div class="col mb-2">
+          <input type="text" class="form-control form-control-sm" placeholder="First name" aria-label="First name" style="width: 60%;" name='f_name';>
+        </div>
+        <div class="col mb-2">
+          <input type="text" class="form-control form-control-sm" placeholder="Last name" name="l_name" aria-label="Last name" style="width: 60%;">
+        </div>
+      
+      <div class="col mb-2">
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Address" name="address" style="width: 60%;"></textarea>
+        </div>
+      <div class="col mb-2">
+        <input type="tel" class="form-control form-control-sm" placeholder="Phonenumber" aria-label="First name" name="phone" style="width: 60%;">
+      </div>
+    
+      <div class="col mb-2">
+        <input type="email" class="form-control form-control-sm" placeholder="Email" aria-label="First name" name="email" style="width: 60%;">
+      </div>
+      
+      <div class="col mb-2">
+        <input type="text" class="form-control form-control-sm" placeholder="Bank name" aria-label="First name" name="bank" style="width: 60%;">
+      </div>
+      <div class="col mb-2">
+        <input type="text" class="form-control form-control-sm" placeholder="Bank Branch" aria-label="First name" name="branch" style="width: 60%;">
+      </div>
+        <div class="col mb-2">
+            <input type="text" class="form-control form-control-sm" placeholder="IFSC" aria-label="First name" name="ifsc" style="width: 60%;">
+          </div>
+        <div class="col mb-2">
+            <input type="text" class="form-control form-control-sm" placeholder="Account Number" aria-label="First name" name="account" style="width: 60%;">
+          </div>  
+          <div class="col mb-2">
+            <input type="file" class="form-control form-control-sm" placeholder="choose image" aria-label="First name" name="seller_pic" style="width: 60%;">
+          </div> 
+      <div class="col mb-2">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label text-danger" for="exampleCheck1">Check me out</label>
+      </div>
+      <div class="col mb-2">
+        <button type="submit" class="btn btn-outline-secondary" style="width: 25%;">Sign up</button>
+      </div>
+    </div><br>
+    {{ message }}
+    <!-- <div class="mb- form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-outline-success" style="width: 25%;">Login</button> -->
+    <!-- <div class="modal-footer justify-content-center">
+      
+      <span>Already have an account?</span><button class="btn btn-link text-success" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Login Here</button>
+    </div> -->
+  </div>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+  
+</body>
+</html>
+{% endblock %}

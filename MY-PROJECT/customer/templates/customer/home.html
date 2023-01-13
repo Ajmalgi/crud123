@@ -1,0 +1,48 @@
+{% extends "customer/master.html" %}
+{% load static %}
+{% block content %}
+
+  <!--CUROUSEL START-->
+  <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active ">
+        <img src="{% static 'images/sofa3.jpeg' %}" class="d-block w-100 imgsize " alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'images/sofa4.jpg' %}" class="d-block w-100 imgsize " alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'images/sofa1.jpg' %}" class="d-block w-100 imgsize " alt="...">
+      </div>
+    </div>
+  </div>
+    <!--CUROUSEL END-->
+
+ <!-- to make uppercase letters we use '| upper' -->
+<!-- <span>WELCOME {{ name | upper }}</span> -->
+<p _ngcontent-c15="" class="desc text-center text-danger"
+ style="font-size: 100px; font-weight:bolder; text-shadow: 50px;">WELCOME {{name | upper}}</p>     
+
+
+<br><br><br>
+ <div class="row row-cols-1 row-cols-md-3 g-4">
+  <!-- product:variable ,products :datas from products -->
+  {% for product in products %}   
+    <div class="col">
+      <div class="card">
+        <a href="{% url 'customer:details' product.id %}">
+        <img src="{{ product.image.url }}" class="card-img-top" alt="..."></a>
+        <div class="card-body">
+          <h5 class="card-title">{{ product.product_name }}</h5>
+          <p class="card-text">{{ product.product_description }}</p>
+          <p> seller name :  {{product.seller.first_name }} {{product.seller.last_name }}</p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+    
+    
+  </div>
+
+
+{% endblock %}

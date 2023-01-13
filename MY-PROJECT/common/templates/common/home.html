@@ -1,0 +1,68 @@
+{% extends "common/master.html" %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-FURNITURE</title>
+    <link rel="stylesheet" href="{% static 'styles/form.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/body.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+     integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+     <link href="{% static 'fontawesomefree/css/fontawesome.css' %}" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+  <!--CUROUSEL START-->
+  <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active ">
+        <img src="{% static 'images/sofa3.jpeg' %}" class="d-block w-100 imgsize " alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'images/sofa4.jpg' %}" class="d-block w-100 imgsize " alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'images/sofa1.jpg' %}" class="d-block w-100 imgsize " alt="...">
+      </div>
+    </div>
+  </div>
+    <!--CUROUSEL END-->
+
+<br><br><br>
+ <div class="row row-cols-1 row-cols-md-3 g-4">
+  <!-- product:variable products :datas from Product model -->
+ 
+    <div class="col">
+      <div class="card">
+        <img src="{% static 'images/m11.avif' %}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">NAME</h5>
+          <p class="card-text">DESCRIPTION</p>
+         
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <img src="{% static 'images/m12.webp' %}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">NAME</h5>
+          <p class="card-text">DESCRIPTION</p>
+         
+        </div>
+      </div>
+    </div>
+    
+    
+    
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+</body</html>
+
+
+{% endblock %}
